@@ -2,38 +2,31 @@ extends layout
 
 block content
   .row
-    .col-sm-12.text-center
-      h1 basic bot
-      p there's also keyboard steering: up,down,left,right
-    .col-sm-12
-      hr
-  .row
-    .col-sm-4.col-sm-offset-4.col-xs-12
-        button.btn.btn-block.btn-lg.btn-success.emitter(data-channel='up', data-value='', data-keyboard='38')
-          span.glyphicon.glyphicon-chevron-up
-          | &nbsp; forward &nbsp;
-          span.glyphicon.glyphicon-chevron-up
+    br
+    .col-sm-2.col-sm-offset-3.col-xs-4
+      button.btn.btn-block.btn-lg.btn-warning.emitter(data-channel='a-high')
+        span.glyphicon.glyphicon-chevron-up
+    .col-sm-2.col-xs-4
+    .col-sm-2.col-xs-4
+      button.btn.btn-block.btn-lg.btn-warning.emitter(data-channel='b-high')
+        span.glyphicon.glyphicon-chevron-up
   .row
     br
     .col-sm-2.col-sm-offset-3.col-xs-4
-      button.btn.btn-block.btn-lg.btn-warning.emitter(data-channel='left', data-value='', data-keyboard='37')
-        span.glyphicon.glyphicon-chevron-left
-        | &nbsp; left
+      button.btn.btn-block.btn-lg.btn-warning.emitter(data-channel='a-reset')
+        span.glyphicon.icon-minus-sign
     .col-sm-2.col-xs-4
-      button.btn.btn-block.btn-lg.btn-danger.emitter(data-channel='stop', data-value='', data-keyboard='13')
-        span.glyphicon.glyphicon-remove
-        | &nbsp; stop &nbsp;
-        span.glyphicon.glyphicon-remove
     .col-sm-2.col-xs-4
-      button.btn.btn-block.btn-lg.btn-primary.emitter(data-channel='right', data-value='', data-keyboard='39')
-        | right &nbsp;
-        span.glyphicon.glyphicon-chevron-right
+      button.btn.btn-block.btn-lg.btn-warning.emitter(data-channel='b-reset')
+        span.glyphicon.icon-minus-sign
   .row
     br
-    .col-sm-4.col-sm-offset-4.col-xs-12
-      button.btn.btn-block.btn-lg.btn-default.emitter(data-channel='down', data-value='', data-keyboard='40')
+    .col-sm-2.col-sm-offset-3.col-xs-4
+      button.btn.btn-block.btn-lg.btn-warning.emitter(data-channel='a-low')
         span.glyphicon.glyphicon-chevron-down
-        | &nbsp; back &nbsp;
+    .col-sm-2.col-xs-4
+    .col-sm-2.col-xs-4
+      button.btn.btn-block.btn-lg.btn-warning.emitter(data-channel='b-low')
         span.glyphicon.glyphicon-chevron-down
   .row
     .col-sm-12

@@ -39,6 +39,23 @@ right = ->
 
 pins = {}
 
+fireSet = (label, pin, val) -> ->
+  return if !config.isPI
+  socket?.emit "feedback", label
+  motor = config.motors[pin] 
+  if val
+    motor.pow.set()
+    motor.dir.set 0
+  else
+    motor.pow.set 0
+    motor.pow.set 1
+  console.log label
+fireReset = (label, pin) -> ->
+  return if !config.isPI
+  socket?.emit "feedback", label
+  config.motors[pin].reset()
+  console.log label
+
 module.exports = (socket) ->
 
   if config.isPI
@@ -104,3 +121,10 @@ module.exports = (socket) ->
     stop()
     console.log "stop!"
 
+
+  socket.on 'a-high', fireSet 'a-high', 'a', 1
+  socket.on 'b-high', fireSet 'b-high', 'b', 1
+  socket.on 'a-low', fireSet 'a-low', 'a', 0
+  socket.on 'b-low', fireSet 'b-low', 'b', 0
+  socket.on 'a-reset', fireReset 'a-reset', 'a'
+  socket.on 'b-reset', fireReset 'b-reset', 'b'
