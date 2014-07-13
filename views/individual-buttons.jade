@@ -1,0 +1,39 @@
+extends layout
+
+block content
+  .row
+    br
+    .col-sm-2.col-sm-offset-3.col-xs-4
+      button.btn.btn-block.btn-lg.btn-warning.emitter(data-channel='a-high')
+        span.glyphicon.glyphicon-chevron-up
+    .col-sm-2.col-xs-4
+    .col-sm-2.col-xs-4
+      button.btn.btn-block.btn-lg.btn-warning.emitter(data-channel='b-high')
+        span.glyphicon.glyphicon-chevron-up
+  .row
+    br
+    .col-sm-2.col-sm-offset-3.col-xs-4
+      button.btn.btn-block.btn-lg.btn-warning.emitter(data-channel='a-reset')
+        span.glyphicon.icon-minus-sign
+    .col-sm-2.col-xs-4
+    .col-sm-2.col-xs-4
+      button.btn.btn-block.btn-lg.btn-warning.emitter(data-channel='b-reset')
+        span.glyphicon.icon-minus-sign
+  .row
+    br
+    .col-sm-2.col-sm-offset-3.col-xs-4
+      button.btn.btn-block.btn-lg.btn-warning.emitter(data-channel='a-low')
+        span.glyphicon.glyphicon-chevron-down
+    .col-sm-2.col-xs-4
+    .col-sm-2.col-xs-4
+      button.btn.btn-block.btn-lg.btn-warning.emitter(data-channel='b-low')
+        span.glyphicon.glyphicon-chevron-down
+  .row
+    .col-sm-12
+      hr
+      .form-horizontal
+        .form-group
+          label.col-sm-4 feedback from server
+          .col-sm-8
+            textarea#feedback.form-control(disabled)
+    

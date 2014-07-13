@@ -17,6 +17,9 @@ module.exports = (app) ->
   app.get '/', (req, res) ->
     res.render 'index', req.args
 
+  app.get '/individual', (req, res) ->
+    res.render 'individual-buttons', req.args
+
   #app.get '/profile', (req, res) ->
     #res.render 'me/index', req.args
 
